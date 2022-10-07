@@ -15,28 +15,26 @@ public class Insertion
    */
   public static int[] sort(int[] arr) {
     // loop elements
-    int n = 0, j = 0, i = 0, k = 0, temp = 0;
-    if(i < n){
+    int n = arr.length, j = 0, i = 0, k = 0, temp = 0;
+    for(i = 1; i < n; i ++){
         j = i-1;
-    } else{
-        return arr;
-    }
-    
-    if (j >= 0){
-        if (arr[i] < arr[j]){
-            j++;
+        
+        if (j >= 0){
+            if (arr[i] < arr[j]){
+                j++;
+            }
+        } else{
+            temp = arr[i];
+            k = i;
         }
-    } else{
-        temp = arr[i];
-        k = i;
-    }
-    
-    if (k > j+1){
-        arr[k] = arr[k-1];
-        k--;
-    } else{
-        arr[k] = temp;
-        i++;
+        
+        if (k > j+1){
+            arr[k] = arr[k-1];
+            k--;
+        } else{
+            arr[k] = temp;
+            i++;
+        }
     }
   }
   
