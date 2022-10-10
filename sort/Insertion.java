@@ -16,16 +16,16 @@ public class Insertion
   public static int[] sort(int[] arr) {
     // loop elements
     int n = arr.length, j = 0, i = 0, k = 0, temp = 0;
-    for(i = 1; i < n; i ++){
+    for(i = 1; i < n; i++){
         j = i-1;
         
         if (j >= 0){
             if (arr[i] < arr[j]){
                 j++;
+            } else{
+                temp = arr[i];
+                k = i;
             }
-        } else{
-            temp = arr[i];
-            k = i;
         }
         
         if (k > j+1){
@@ -35,7 +35,10 @@ public class Insertion
             arr[k] = temp;
             i++;
         }
+        
     }
+    
+    return arr;
   }
   
   public static void main(String[] args) {
