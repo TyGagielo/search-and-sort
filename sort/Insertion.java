@@ -19,23 +19,18 @@ public class Insertion
     for(i = 1; i < n; i++){
         j = i-1;
         
-        if (j >= 0){
-            if (arr[i] < arr[j]){
-                j++;
-            } else{
-                temp = arr[i];
-                k = i;
-            }
+        while ( j >= 0 && arr[i] < arr[j]){ 
+            j--;
         }
         
-        if (k > j+1){
+        temp = arr[i];
+        k = i;
+        
+        while (k > j+1){
             arr[k] = arr[k-1];
             k--;
-        } else{
-            arr[k] = temp;
-            i++;
         }
-        
+        arr[k] = temp;
     }
     
     return arr;
@@ -58,6 +53,7 @@ public class Insertion
         return;
       }
     }
+    System.out.println(Arrays.toString(arr));
     System.out.println("SUCCESS!");
   }
 
