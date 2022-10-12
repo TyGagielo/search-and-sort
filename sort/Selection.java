@@ -16,8 +16,31 @@ public class Selection
    */
   public static int[] sort(int[] arr) {
     // Your algorithm goes here!
-    int[] alg = {1,2,3,4,5,6,7,8,9,0};
-    return alg;
+    int i = 0, j, min, temp, minP;
+    
+    for (i = 0; i < arr.length - 1; i++){
+        
+        j = i;
+        min = arr[j];
+        minP = j;
+        temp = arr[j];
+        
+        while (j < arr.length - 1){
+            
+            if (min > arr[j+1]){
+                
+                min = arr[j+1];
+                minP = j+1;
+            }
+            
+            j++;
+        }
+        
+        arr[i] = min;
+        arr[minP] = temp;
+    }
+    
+    return arr;
   }
   
   public static void main(String[] args) {
@@ -37,6 +60,7 @@ public class Selection
         return;
       }
     }
+    System.out.println(Arrays.toString(arr));
     System.out.println("SUCCESS!");
   }
 
