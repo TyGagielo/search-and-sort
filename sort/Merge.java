@@ -43,8 +43,13 @@ public class Merge
             index++;
         }
         
+        sort(left);
+        sort(right);
+        System.arraycopy(arr, 0, left, 0, leftLong);
+        System.arraycopy(arr, mid, right, 0, rightLong);
+        int[] suck = {1};
+        return suck;
     }
-    
   }
   
   public static void main(String[] args) {
