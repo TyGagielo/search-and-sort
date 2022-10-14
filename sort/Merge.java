@@ -10,22 +10,21 @@ import java.util.Arrays;
  */
 public class Merge
 {
-  
-  /**
+   /**
    * Returns the sorted array
    */
   public static int[] sort(int[] arr) {
     // Your algorithm goes here!
-    int[] left = {}, right = {};
     int N = arr.length;
+    
     
     if(N <= 1){
         return arr;
     } else{
-        
         int mid = N/2;
-        int leftLong = mid;
-        int rightLong = N-leftLong;
+        int[] left = new int[mid], right = new int[N-(mid)];
+        System.out.println(Arrays.toString(left));
+        System.out.println(Arrays.toString(right));
         int index = 0;
         int rightIndex;
         
@@ -45,11 +44,12 @@ public class Merge
         
         sort(left);
         sort(right);
-        System.arraycopy(arr, 0, left, 0, leftLong);
-        System.arraycopy(arr, mid, right, 0, rightLong);
-        int[] suck = {1};
-        return suck;
+        System.arraycopy(arr, 0, left, 0, left.length);
+        System.arraycopy(arr, mid, right, 0, right.length);
     }
+    
+    
+    return arr;
   }
   
   public static void main(String[] args) {
@@ -70,6 +70,7 @@ public class Merge
       }
     }
     System.out.println("SUCCESS!");
+    System.out.println(Arrays.toString(arr));
   }
 
 }
