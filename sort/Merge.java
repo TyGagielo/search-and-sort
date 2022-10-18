@@ -10,21 +10,17 @@ import java.util.Arrays;
  */
 public class Merge
 {
-   /**
-   * Returns the sorted array
-   */
+/*
   public static int[] sort(int[] arr) {
     // Your algorithm goes here!
     int N = arr.length;
-    
+    int[] temp = new int[] {};
     
     if(N <= 1){
         return arr;
     } else{
         int mid = N/2;
         int[] left = new int[mid], right = new int[N-(mid)];
-        System.out.println(Arrays.toString(left));
-        System.out.println(Arrays.toString(right));
         int index = 0;
         int rightIndex;
         
@@ -46,10 +42,32 @@ public class Merge
         sort(right);
         System.arraycopy(arr, 0, left, 0, left.length);
         System.arraycopy(arr, mid, right, 0, right.length);
+        
+        temp = arr;
+        System.out.print(temp);
     }
     
-    
-    return arr;
+    return temp;
+  }*/
+  public static int[] merge(int arr[], int first, int mid, int last){
+      //subarray Size
+      int n1 = mid - first + 1;
+      int n2 = last - mid;
+      
+      int[] Left = new int[n1];
+      int[] Right = new int[n2];
+      
+      int Lindex = 0;
+      int Rindex = 0;
+      while (Lindex < n1){
+          Left[Lindex] = arr[first+Lindex];
+          Lindex++;
+      }
+      while (Rindex < n2){
+          Right[Rindex] = arr[mid + 1 + Rindex];
+      }
+      
+      
   }
   
   public static void main(String[] args) {
