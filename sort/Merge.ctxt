@@ -1,11 +1,13 @@
 #BlueJ class context
 comment0.target=Merge
 comment0.text=\n\ Write\ a\ description\ of\ class\ Merge\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=arr
-comment1.target=int[]\ sort(int[])
-comment1.text=\n\ Returns\ the\ sorted\ array\n
-comment2.params=args
-comment2.target=void\ main(java.lang.String[])
-comment3.params=arr
-comment3.target=void\ testSort(int[])
-numComments=4
+comment1.params=arr\ first\ mid\ last
+comment1.target=void\ merge(int[],\ int,\ int,\ int)
+comment1.text=\n\ \ public\ static\ int[]\ sort(int[]\ arr)\ {\n\ \ \ \ //\ Your\ algorithm\ goes\ here\!\n\ \ \ \ int\ N\ \=\ arr.length;\n\ \ \ \ int[]\ temp\ \=\ new\ int[]\ {};\n\ \ \ \ \n\ \ \ \ if(N\ <\=\ 1){\n\ \ \ \ \ \ \ \ return\ arr;\n\ \ \ \ }\ else{\n\ \ \ \ \ \ \ \ int\ mid\ \=\ N/2;\n\ \ \ \ \ \ \ \ int[]\ left\ \=\ new\ int[mid],\ right\ \=\ new\ int[N-(mid)];\n\ \ \ \ \ \ \ \ int\ index\ \=\ 0;\n\ \ \ \ \ \ \ \ int\ rightIndex;\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ while(index\ <\ mid){\n\ \ \ \ \ \ \ \ \ \ \ \ left[index]\ \=\ arr[index];\n\ \ \ \ \ \ \ \ \ \ \ \ index++;\n\ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ rightIndex\ \=\ 0;\n\ \ \ \ \ \ \ \ index\ \=\ mid;\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ while(index\ <\ N){\n\ \ \ \ \ \ \ \ \ \ \ \ right[rightIndex]\ \=\ arr[index];\n\ \ \ \ \ \ \ \ \ \ \ \ rightIndex++;\n\ \ \ \ \ \ \ \ \ \ \ \ index++;\n\ \ \ \ \ \ \ \ }\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ sort(left);\n\ \ \ \ \ \ \ \ sort(right);\n\ \ \ \ \ \ \ \ System.arraycopy(arr,\ 0,\ left,\ 0,\ left.length);\n\ \ \ \ \ \ \ \ System.arraycopy(arr,\ mid,\ right,\ 0,\ right.length);\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ temp\ \=\ arr;\n\ \ \ \ \ \ \ \ System.out.print(temp);\n\ \ \ \ }\n\ \ \ \ \n\ \ \ \ return\ temp;\n}
+comment2.params=arr\ l\ r
+comment2.target=int[]\ sort(int[],\ int,\ int)
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+comment4.params=arr
+comment4.target=void\ testSort(int[])
+numComments=5

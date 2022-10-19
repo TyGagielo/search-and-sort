@@ -49,7 +49,7 @@ public class Merge
     
     return temp;
   }*/
-  public static int[] merge(int arr[], int first, int mid, int last){
+  public static void merge(int arr[], int first, int mid, int last){
       //subarray Size
       int n1 = mid - first + 1;
       int n2 = last - mid;
@@ -67,8 +67,47 @@ public class Merge
           Right[Rindex] = arr[mid + 1 + Rindex];
       }
       
+      int i = 0, j = 0;
       
-  }
+      int k = first;
+      while(i < n1 && j < n2){
+          if (Left[i] <= Right [j]){
+              arr[k] = Left[i];
+              i++;
+          }
+          else{
+              arr[k] = Right[j];
+              j++;
+          }
+          k++;
+      }
+      
+      while (i < n1){
+          arr[k] = Left[i];
+          i++;
+          k++;
+      }
+      
+      while(j < n2){
+          arr[k] = Right[j];
+          j++;
+          k++;
+      }
+    }
+    
+    public static int[] sort(int[] arr, int l, int r){
+        if (l < r){
+            int mid = (l+r)/2;
+            
+            //sort halves
+            sort(arr, l, mid);
+            sort(arr, mid+1, r);
+            
+            merge(arr, l, mid, r);
+        }
+        
+        return arr;
+    }
   
   public static void main(String[] args) {
     int[] arr = {53,85,93,25,39,27,42,5,24,45,33,51,5,80,4,7,91,
@@ -76,7 +115,7 @@ public class Merge
       73,54,51,25,33,20,52,79,97,70,54,63,49};    
     
     // Test the sort
-    testSort(sort(arr));
+    testSort(sort(arr, 0, arr.length - 1));
   }
   
   public static void testSort(int[] arr) {
