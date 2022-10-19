@@ -57,13 +57,11 @@ public class Merge
       int[] Left = new int[n1];
       int[] Right = new int[n2];
       
-      int Lindex = 0;
-      int Rindex = 0;
-      while (Lindex < n1){
+      
+      for (int Lindex = 0; Lindex < n1; ++Lindex){
           Left[Lindex] = arr[first+Lindex];
-          Lindex++;
       }
-      while (Rindex < n2){
+      for (int Rindex = 0; Rindex < n2; ++Rindex){
           Right[Rindex] = arr[mid + 1 + Rindex];
       }
       
