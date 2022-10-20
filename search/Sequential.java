@@ -15,7 +15,11 @@ public class Sequential
    */
   public static int search(int[] arr, int target) {
     // Your algorithm goes here!
-    
+    int i = 0;
+    for (i = 0; arr[i] != target; i++){
+        if(i == arr.length-1){return -1;}
+    }
+    return i;
   }
   
   public static void main(String[] args) {
@@ -32,5 +36,4 @@ public class Sequential
   public static void printResult(int target, boolean result) {
     System.out.println("Search for "+target+": "+((result) ? "CORRECT" : "INCORRECT"));
   }
-
 }
