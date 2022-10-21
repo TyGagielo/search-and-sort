@@ -40,14 +40,36 @@ public class Binary
       
     // Remember that a binary search requires a sorted array!
     // You can use one of your sorting methods here.
+    int i = 0, j, min, temp, minP;
     
+    for (i = 0; i < arr.length - 1; i++){
+        
+        j = i;
+        min = arr[j];
+        minP = j;
+        temp = arr[j];
+        
+        while (j < arr.length - 1){
+            
+            if (min > arr[j+1]){
+                
+                min = arr[j+1];
+                minP = j+1;
+            }
+            
+            j++;
+        }
+        
+        arr[i] = min;
+        arr[minP] = temp;
+    }
 
     ////////////////////////////////////////////////////////////
     // Do not change anything below this line!!
     ////////////////////////////////////////////////////////////
     boolean isSorted = true;
-    for (int i=0; i<arr.length-1 && isSorted; i++) {
-      if (arr[i] > arr[i+1]) {
+    for (int i2=0; i<arr.length-1 && isSorted; i2++) {
+      if (arr[i2] > arr[i2+1]) {
         isSorted = false;
       }
     }
